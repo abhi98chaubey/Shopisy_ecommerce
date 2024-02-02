@@ -7,7 +7,7 @@ Clone the repository:
 
 bash
  
-git clone https://github.com/your-username/your-ecommerce-repo.git
+git clone git@github.com:abhi98chaubey/Shopisy_ecommerce.git
 Navigate to the project directory:
 
 bash
