@@ -49,8 +49,7 @@ const Footer = () => {
               Shopsy
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in
-              beatae ea recusandae blanditiis veritatis.
+            Step into fashion excellence with our curated collection. Elevate your style effortlessly at our clothing e-commerce destination.
             </p>
           </div>
 

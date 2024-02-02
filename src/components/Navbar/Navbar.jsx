@@ -5,31 +5,32 @@ import { FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa";
 import DarkMode from "./DarkMode";
 
+import { Link} from "react-router-dom";
 const Menu = [
   {
     id: 1,
     name: "Home",
-    link: "/#",
+    link: "/",
   },
   {
     id: 2,
     name: "Top Rated",
-    link: "/#services",
+    link: "/toprated",
   },
   {
     id: 3,
     name: "Kids Wear",
-    link: "/#",
+    link: "/kids",
   },
   {
     id: 3,
     name: "Mens Wear",
-    link: "/#",
+    link: "/manswear",
   },
   {
     id: 3,
     name: "Girls Wear",
-    link: "/#",
+    link: "/girlswear",
   },
 ];
 
@@ -129,12 +130,12 @@ const Navbar = ({ handleOrderPopup }) => {
               <ul>
                 {DropdownLinks.map((data) => (
                   <li key={data.id}>
-                    <a
-                      href={data.link}
+                    <Link
+                      to={data.link}
                       className="inline-block w-full rounded-md p-2 hover:bg-primary/20 "
                     >
                       {data.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -143,6 +144,7 @@ const Navbar = ({ handleOrderPopup }) => {
         </ul>
       </div>
     </div>
+    
   );
 };
 

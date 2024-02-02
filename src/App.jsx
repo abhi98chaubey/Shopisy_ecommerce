@@ -1,16 +1,17 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-import Products from "./components/Products/Products";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
-import TopProducts from "./components/TopProducts/TopProducts";
-import Banner from "./components/Banner/Banner";
-import Subscribe from "./components/Subscribe/Subscribe";
-import Testimonials from "./components/Testimonials/Testimonials";
+
 import Footer from "./components/Footer/Footer";
 import Popup from "./components/Popup/Popup";
-
+import { Route, Routes } from "react-router-dom";
+import Manswear from "./pages/Manswear"
+import Girlswear from "./pages/Girlswear"
+import Kids from "./pages/Kids"
+import TopRated from "./pages/TopRated"
+import Home from "./pages/Home";
 const App = () => {
   const [orderPopup, setOrderPopup] = React.useState(false);
 
@@ -28,18 +29,22 @@ const App = () => {
   }, []);
 
   return (
+    <>
+    
     <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
       <Navbar handleOrderPopup={handleOrderPopup} />
-      <Hero handleOrderPopup={handleOrderPopup} />
-      <Products />
-      <TopProducts handleOrderPopup={handleOrderPopup} />
-      <Banner />
-      <Subscribe />
-      <Products />
-      <Testimonials />
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/toprated" element={<TopRated></TopRated>} />
+        <Route path="/girlswear" element={<Girlswear></Girlswear>} />
+        <Route path="/manswear" element={<Manswear></Manswear>} />
+        <Route path="/kids" element={<Kids></Kids>}/>     
+    </Routes>
       <Footer />
       <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
     </div>
+   
+    </>
   );
 };
 
