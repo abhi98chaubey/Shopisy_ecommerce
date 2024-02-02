@@ -34,24 +34,6 @@ const Menu = [
   },
 ];
 
-const DropdownLinks = [
-  {
-    id: 1,
-    name: "Trending Products",
-    link: "/#",
-  },
-  {
-    id: 2,
-    name: "Best Selling",
-    link: "/#",
-  },
-  {
-    id: 3,
-    name: "Top Rated",
-    link: "/#",
-  },
-];
-
 const Navbar = ({ handleOrderPopup }) => {
   const [cartItemCount, setCartItemCount]=useState(2);
   return (
@@ -118,30 +100,7 @@ const Navbar = ({ handleOrderPopup }) => {
               </a>
             </li>
           ))}
-          {/* Simple Dropdown and Links */}
-          <li className="group relative cursor-pointer">
-            <a href="#" className="flex items-center gap-[2px] py-2">
-              Trending Products
-              <span>
-                <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
-              </span>
-            </a>
-            <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white p-2 text-black shadow-md">
-              <ul>
-                {DropdownLinks.map((data) => (
-                  <li key={data.id}>
-                    <Link
-                      to={data.link}
-                      className="inline-block w-full rounded-md p-2 hover:bg-primary/20 "
-                    >
-                      {data.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </li>
-        </ul>
+        </ul> 
       </div>
     </div>
     
