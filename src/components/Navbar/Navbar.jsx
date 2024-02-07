@@ -4,8 +4,9 @@ import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa";
 import DarkMode from "./DarkMode";
+import { useSelector } from "react-redux";
 
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 const Menu = [
   {
     id: 1,
@@ -35,7 +36,8 @@ const Menu = [
 ];
 
 const Navbar = ({ handleOrderPopup }) => {
-  const [cartItemCount, setCartItemCount]=useState(2);
+  const {cartItems}=useSelector((state)=>state.cart);
+  const Navigate = useNavigate();
   return (
     <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* upper Navbar */}
@@ -61,7 +63,7 @@ const Navbar = ({ handleOrderPopup }) => {
 
             {/* order button */}
             <button
-      onClick={() => handleOrderPopup()}
+      onClick={() => Navigate("/carts")}
       className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group relative"
     >
       <span className="group-hover:block hidden transition-all duration-200">
@@ -71,11 +73,11 @@ const Navbar = ({ handleOrderPopup }) => {
         <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
         
         {/* Add a badge or counter for cart items */}
-        {cartItemCount > 0 && (
+        
           <span className="bg-red-500 text-white rounded-full px-2 py-1 absolute -top-2 -right-3 text-xs transform scale-75">
-            {cartItemCount}
+            {cartItems.length}
           </span>
-        )}
+      
       </div>
     </button>
              

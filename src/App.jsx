@@ -12,6 +12,7 @@ import Girlswear from "./pages/Girlswear"
 import Kids from "./pages/Kids"
 import TopRated from "./pages/TopRated"
 import Home from "./pages/Home";
+import Carts from "./pages/Carts";
 const App = () => {
   const [orderPopup, setOrderPopup] = React.useState(false);
 
@@ -35,6 +36,7 @@ const App = () => {
       <Navbar handleOrderPopup={handleOrderPopup} />
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/carts" element={<Carts/>}/>
         <Route path="/toprated" element={<TopRated></TopRated>} />
         <Route path="/girlswear" element={<Girlswear></Girlswear>} />
         <Route path="/manswear" element={<Manswear></Manswear>} />
