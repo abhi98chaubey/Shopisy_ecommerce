@@ -3,17 +3,19 @@ import { FaStar } from "react-icons/fa6";
  import { useDispatch, useSelector } from 'react-redux';
 // import { addItem } from '../../Store/Slices/cartSlice';
 import { ProductsData } from '../../ProductsData';
+import { addToCart} from '../../Store/Slices/cartSlice'
 
 
 
 
 const Products = () => {
-  const dispach=useDispatch();
-    const handler=(option)=>{
-         dispach({type:"addToCart", payload:option});
-         dispach({type:"clculate"});
-         
-    }
+ 
+  const dispatch=useDispatch();
+//   function addinCart(data){
+//     dispatch(add(data));
+//     console.log("add ho gaya");
+
+// }
   return (
     <div className="mt-14 mb-12">
       <div className="container">
@@ -54,11 +56,11 @@ const Products = () => {
                     <span className="ml-4 ">Rs {data.price}</span>
                   </div>
                   <button
-                  className="bg-primary hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary"
-                  onClick={()=>handler(data)}
-                >
-                  Add to Cart
-                </button>
+  className="bg-primary hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary"
+  onClick={() => dispatch(addToCart({title: data.title, id: data.id, price: data.price, img: data.img}))}
+>
+  Add to Cart
+</button>
                 </div>
               </div>
             ))}

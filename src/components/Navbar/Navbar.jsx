@@ -9,37 +9,46 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate} from "react-router-dom";
 const Menu = [
   {
-    id: 1,
+    id: 10,
     name: "Home",
     link: "/",
   },
   {
-    id: 2,
+    id: 20,
     name: "Top Rated",
     link: "/toprated",
   },
   {
-    id: 3,
+    id: 30,
     name: "Kids Wear",
     link: "/kids",
   },
   {
-    id: 3,
+    id: 40,
     name: "Mens Wear",
     link: "/manswear",
   },
   {
-    id: 3,
+    id: 50,
     name: "Girls Wear",
     link: "/girlswear",
   },
 ];
 
 const Navbar = ({ handleOrderPopup }) => {
-  const {cartItems}=useSelector((state)=>state.cart);
+  const cart = useSelector((state) => state.cart)
+
+const getTotalQuantity = () => {
+  let total = 0
+  cart.forEach(item => {
+    total += item.quantity
+  })
+  return total
+}
+ // const {cartItems}=useSelector((state)=>state.cart);
   const Navigate = useNavigate();
   return (
-    <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
+    <div className="sticky top-0 shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* upper Navbar */}
       <div className="bg-primary/40 py-2">
         <div className="container flex justify-between items-center">
@@ -75,7 +84,7 @@ const Navbar = ({ handleOrderPopup }) => {
         {/* Add a badge or counter for cart items */}
         
           <span className="bg-red-500 text-white rounded-full px-2 py-1 absolute -top-2 -right-3 text-xs transform scale-75">
-            {cartItems.length}
+          {getTotalQuantity() || 0}
           </span>
       
       </div>
