@@ -11,6 +11,7 @@ export const ProductsData = [
       color: "white",
       aosDelay: "0",
       price: 1234.00,
+      description: "Description of product 1",
     },
     {
       id: 26,
@@ -20,6 +21,7 @@ export const ProductsData = [
       color: "Red",
       aosDelay: "200",
       price: 1234.00,
+      description: "Description of product 1",
     },
     {
       id: 37,
@@ -29,6 +31,7 @@ export const ProductsData = [
       color: "brown",
       aosDelay: "400",
       price: 1234.00,
+      description: "Description of product 1",
     },
     {
       id: 48,
@@ -38,6 +41,7 @@ export const ProductsData = [
       color: "Yellow",
       aosDelay: "600",
       price: 123.00,
+      description: "Description of product 1",
     },
     {
       id: 59,
@@ -47,6 +51,7 @@ export const ProductsData = [
       color: "Pink",
       aosDelay: "800",
       price: 1234.00,
+      description: "Description of product 1",
     },
   ];
   
