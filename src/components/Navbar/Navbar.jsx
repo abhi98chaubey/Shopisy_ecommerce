@@ -20,17 +20,17 @@ const Menu = [
   },
   {
     id: 30,
-    name: "Kids Wear",
+    name: "Men Shirt",
     link: "/kids",
   },
   {
     id: 40,
-    name: "Mens Wear",
+    name: "Mens Shoes",
     link: "/manswear",
   },
   {
     id: 50,
-    name: "Girls Wear",
+    name: "Girls Shoes",
     link: "/girlswear",
   },
 ];

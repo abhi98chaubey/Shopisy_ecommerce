@@ -10,8 +10,11 @@ import { useNavigate } from "react-router-dom";
 
 
 
+
 const Products = () => {
+  
   const Navigate = useNavigate();
+
   const dispatch=useDispatch();
 //   function addinCart(data){
 //     dispatch(add(data));
