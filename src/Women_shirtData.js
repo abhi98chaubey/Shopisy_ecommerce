@@ -1,4 +1,4 @@
- [
+export const ProductsData =[
       {
         "product_id": "3677238602265449195",
         "product_title": "Roadster Women Olive Green & Off-White Pure Cotton Tartan Checks Checked Casual Shirt (XL) by Myntra",

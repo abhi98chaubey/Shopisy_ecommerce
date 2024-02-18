@@ -1,4 +1,4 @@
-export const ProductsData =  [
+export const ProductsData  =  [
       {
         "product_id": "1160169821242548563",
         "product_title": "Urban Buccachi Men Relaxed Fit Shirt with Short Sleeves For Men (Purple, S)",

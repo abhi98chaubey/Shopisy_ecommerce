@@ -3,12 +3,14 @@ import Img1 from "../../assets/shirt/shirt.png";
 import Img2 from "../../assets/shirt/shirt2.png";
 import Img3 from "../../assets/shirt/shirt3.png";
 import { FaStar } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const ProductsData = [
   {
     id: 1,
     img: Img1,
     title: "Casual Wear",
+    link:"/Men_Shirts",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
@@ -16,6 +18,7 @@ const ProductsData = [
     id: 2,
     img: Img2,
     title: "Printed shirt",
+    link:"/Men_Shirts",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
@@ -23,11 +26,13 @@ const ProductsData = [
     id: 3,
     img: Img3,
     title: "Women shirt",
+    link:"/Women_Shirts",
     description:
       "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
-const TopProducts = ({ handleOrderPopup }) => {
+const TopProducts = () => {
+  const Navigate= useNavigate();
   return (
     <div>
       <div className="container">
@@ -73,7 +78,7 @@ const TopProducts = ({ handleOrderPopup }) => {
                 </p>
                 <button
                   className="bg-primary hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary"
-                  onClick={handleOrderPopup}
+                  onClick={() => Navigate(`${data.link}`)}
                 >
                   Order Now
                 </button>

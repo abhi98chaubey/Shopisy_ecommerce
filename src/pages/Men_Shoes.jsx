@@ -2,14 +2,15 @@ import React from 'react'
 
 import {ProductsData} from '../ShoesData'
 import { FaStar } from "react-icons/fa6";
- import { useDispatch } from 'react-redux';
+ import { useDispatch, useSelector } from 'react-redux';
 
 
 import { addToCart} from '../Store/Slices/cartSlice'
 
 import { useNavigate } from "react-router-dom";
 
-function Manswear() {
+
+ function Mens_Shoes() {
   const Navigate = useNavigate();
 
   const dispatch=useDispatch();
@@ -27,7 +28,7 @@ function Manswear() {
             Top Selling Shoes for you
           </p>
           <h1 data-aos="fade-up" className="text-3xl font-bold">
-          Nike Shoes
+          Girls Shoes
           </h1>
           <p data-aos="fade-up" className="text-xs text-gray-400">
           Discover the Best! Shop Top Selling Shoes Tailored Just for You.
@@ -87,4 +88,4 @@ function Manswear() {
 }
 
 
-export default Manswear
+export default Mens_Shoes;

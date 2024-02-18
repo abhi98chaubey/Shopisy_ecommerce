@@ -1,4 +1,4 @@
-export const ProductsData= [
+export const ProductsData = [
       {
         "product_id": "3126013410848047111",
         "product_title": "Mast & Harbour Women Blue Solid Round Neck T-shirt (XS) by Myntra",

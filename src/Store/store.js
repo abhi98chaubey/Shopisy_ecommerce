@@ -21,15 +21,3 @@ const store = configureStore({
 const persistor = persistStore(store);
 
 export { store, persistor };
-
-
-
-
-// import { configureStore } from "@reduxjs/toolkit";
-// import { cartReducer } from "./Slices/cartSlice";
-
-// const store = configureStore({
-//   reducer: cartReducer
-// });
-
-// export default store;

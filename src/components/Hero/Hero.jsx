@@ -3,11 +3,13 @@ import Image1 from "../../assets/hero/women.png";
 import Image2 from "../../assets/hero/shopping.png";
 import Image3 from "../../assets/hero/sale.png";
 import Slider from "react-slick";
+import { useNavigate } from "react-router-dom";
 
 const ImageList = [
   {
     id: 1,
     img: Image1,
+    link:"/Men_Tshirts",
     title: "Upto 50% off on all Men's Wear",
     description:
       "Discover Unbeatable Savings! Enjoy Up to 50% Off on a Stylish Collection of Men's Wear.",
@@ -15,6 +17,7 @@ const ImageList = [
   {
     id: 2,
     img: Image2,
+    link:"/Women_Jeans",
     title: "30% off on all Women's Wear",
     description:
       "Unleash Your Style with 30% Off! Explore an Exclusive Range of Women's Fashion at Irresistible Prices.",
@@ -22,13 +25,15 @@ const ImageList = [
   {
     id: 3,
     img: Image3,
+    link:"/Women_Tshirts",
     title: "70% off on all Products Sale",
     description:
       "Unbelievable Deals Await! Save Big with a Spectacular 70% Off on Every Product – Limited Time Offer!",
   },
 ];
 
-const Hero = ({ handleOrderPopup }) => {
+const Hero = () => {
+  const Navigate= useNavigate();
   var settings = {
     dots: false,
     arrows: false,
@@ -76,7 +81,7 @@ const Hero = ({ handleOrderPopup }) => {
                     data-aos-delay="300"
                   >
                     <button
-                      onClick={handleOrderPopup}
+                      onClick={() => Navigate(`${data.link}`)}
                       className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full"
                     >
                       Order Now

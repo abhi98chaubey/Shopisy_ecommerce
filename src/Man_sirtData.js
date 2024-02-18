@@ -1,4 +1,4 @@
-export const ProductsData= [
+export const ProductsData = [
       {
         "product_id": "5823378299144974409",
         "product_title": "U Turn Men Solid Casual Black Shirt",

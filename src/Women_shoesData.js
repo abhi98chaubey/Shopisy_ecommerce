@@ -1,4 +1,4 @@
-export const ProductsData= [
+export const ProductsData = [
       {
         "product_id": "15677292884154959987",
         "product_title": "HRX by Hrithik Roshan Women White Mesh Running Non-Marking Shoes(7) by Myntra",

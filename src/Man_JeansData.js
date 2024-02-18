@@ -1,7 +1,4 @@
-{
-    "status": "OK",
-    "request_id": "5c3ac3c2-86b2-4595-96cd-dc3658933845",
-    "data": [
+export const ProductsData = [
       {
         "product_id": "9874535920374993557",
         "product_title": "HIGHLANDER Men Relaxed Fit Mid-Rise Cotton Jeans (36) by Myntra",
@@ -1305,4 +1302,4 @@
         }
       }
     ]
-  }
+  

@@ -14,9 +14,9 @@ function Home() {
     };
   return (
     <div>
-        <Hero handleOrderPopup={handleOrderPopup} />
+        <Hero  />
       <Products />
-      <TopProducts handleOrderPopup={handleOrderPopup} />
+      <TopProducts  />
       <Banner />
       <Subscribe />
       <Products />

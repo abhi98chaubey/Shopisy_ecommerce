@@ -1,4 +1,4 @@
-export const ProductsData= [
+export const ProductsData = [
       {
         "product_id": "11922754301643611718",
         "product_title": "Kotty Regular Women Black Jeans",

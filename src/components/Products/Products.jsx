@@ -4,7 +4,6 @@ import { FaStar } from "react-icons/fa6";
 // import { addItem } from '../../Store/Slices/cartSlice';
 import { ProductsData } from '../../ProductsData';
 import { addToCart} from '../../Store/Slices/cartSlice'
-import Productdetails from "../Productdetails/Productdetails";
 import { useNavigate } from "react-router-dom";
 
 
@@ -82,7 +81,7 @@ const Products = () => {
           {/* view all button */}
           <div className="flex justify-center">
             <button className="text-center mt-10 cursor-pointer bg-primary text-white py-1 px-5 rounded-md" 
-            >
+            onClick={() => Navigate(`girlswear`)}>
               View All
             </button>
           </div>
