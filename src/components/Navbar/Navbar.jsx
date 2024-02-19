@@ -16,42 +16,42 @@ const Menu = [
   {
     id: 20,
     name: "Women T-shirts",
-    link: "/Women_Tshirts",
+    link: "/Women_tshirtData",
   },
   {
     id: 30,
     name: "Men Shirts",
-    link: "/Men_Shirts",
+    link: "/Men_sirtData",
   },
   {
     id: 40,
     name: "Men Shoes",
-    link: "/Men_Shoes",
+    link: "/Men_ShoesData",
   },
   {
     id: 50,
     name: "Women Shoes",
-    link: "/Women_Shoes",
+    link: "/Women_shoesData",
   },
   {
     id: 60,
     name: "Men T-shirts",
-    link: "/Men_Tshirts",
+    link: "/Men_Tshirt",
   },
   {
     id: 70,
     name: "Women Shirts",
-    link: "/Women_Shirts",
+    link: "/Women_shirtData",
   },
   {
     id: 90,
     name: "Men Jeans",
-    link: "/Men_Jeans",
+    link: "/Men_JeansData",
   },
   {
     id: 100,
     name: "Women Jeans",
-    link: "/Women_Jeans",
+    link: "/Women_JeansData",
   },
 ];
 

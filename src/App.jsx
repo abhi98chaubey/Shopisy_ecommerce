@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 
 import Footer from "./components/Footer/Footer";
 import Popup from "./components/Popup/Popup";
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes, useParams, useLocation } from "react-router-dom";
 import Manswear from "./pages/Manswear"
 import Girlswear from "./pages/Girlswear"
 import Kids from "./pages/Kids"
@@ -25,6 +25,9 @@ import  Mens_Jeans  from "./pages/Men_Jeans";
 import  Mens_Shoes  from "./pages/Men_Shoes";
 
 const App = () => {
+  const location = useLocation();
+  const pathname = location.pathname.split('/')[1];
+
   const [orderPopup, setOrderPopup] = React.useState(false);
 
   const handleOrderPopup = () => {
@@ -48,15 +51,16 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/carts" element={<Carts/>}/>
-        <Route path="/Men_Shirts/product/:product_id" element={<Productdetails/>}/>
-        <Route path="/Men_Shirts" element={<Men_Shirts/>} />
-        <Route path="/Men_Tshirts" element={<Men_Tshirts/>} />
-        <Route path="/Men_Shoes" element={<Mens_Shoes/>} />
-        <Route path="/Men_Jeans" element={<Mens_Jeans/>} />
-        <Route path="/Women_Jeans" element={<Women_Jeans/>} />
-        <Route path="/Women_Shirts" element={<Women_Shirts/>} />
-        <Route path="/Women_Shoes" element={<Women_Shoes/>} />
-        <Route path="/Women_Tshirts" element={<Women_Tshirt/>} />
+        <Route path={`/${pathname}/product/:product_id`} element={<Productdetails/>}/>
+
+        <Route path="/Men_sirtData" element={<Men_Shirts/>} />
+        <Route path="/Men_Tshirt" element={<Men_Tshirts/>} />
+        <Route path="/Men_ShoesData" element={<Mens_Shoes/>} />
+        <Route path="/Men_JeansData" element={<Mens_Jeans/>} />
+        <Route path="/Women_JeansData" element={<Women_Jeans/>} />
+        <Route path="/Women_shirtData" element={<Women_Shirts/>} />
+        <Route path="/Women_shoesData" element={<Women_Shoes/>} />
+        <Route path="/Women_tshirtData" element={<Women_Tshirt/>} />
 
         
     </Routes>

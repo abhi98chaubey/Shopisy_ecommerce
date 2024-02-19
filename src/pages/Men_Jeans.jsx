@@ -3,13 +3,16 @@ import { ProductsData } from '../AllProductsData'
 import { FaStar } from "react-icons/fa6";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../Store/Slices/cartSlice';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 function Men_Jeans() {
+     const location = useLocation();
+  const pathname = location.pathname.split('/')[1];
+  
   const Navigate = useNavigate();
   const dispatch = useDispatch();
-  const ProductData= ProductsData.Men_JeansData;
+  const ProductData= ProductsData[pathname];
 
   return (
     <div className="mt-14 mb-12">
