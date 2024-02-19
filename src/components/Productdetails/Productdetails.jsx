@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ProductsData } from '../../ShoesData';
+import { ProductsData } from '../../Man_sirtData';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-import { addToCart} from '../../Store/Slices/cartSlice'
+import { addToCart } from '../../Store/Slices/cartSlice'
 
 import { useNavigate } from "react-router-dom";
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {ProductsData} from '../Women_tshirtData'
+import {ProductsData} from '../AllProductsData'
 import { FaStar } from "react-icons/fa6";
  import { useDispatch, useSelector } from 'react-redux';
 
@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 
 function Women_Tshirt() {
+    const ProductData= ProductsData.Women_tshirtData;
   const Navigate = useNavigate();
 
   const dispatch=useDispatch();
@@ -39,7 +40,7 @@ function Women_Tshirt() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-5">
             {/* card section */}
-            {ProductsData.map((data) => (
+            {ProductData.map((data) => (
               <div
                 data-aos="fade-up"
                 data-aos-delay={data.aosDelay}

@@ -1,13 +1,15 @@
 import React from 'react'
-import { ProductsData } from '../Man_JeansData'
+import { ProductsData } from '../AllProductsData'
 import { FaStar } from "react-icons/fa6";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../Store/Slices/cartSlice';
 import { useNavigate } from "react-router-dom";
 
+
 function Men_Jeans() {
   const Navigate = useNavigate();
   const dispatch = useDispatch();
+  const ProductData= ProductsData.Men_JeansData;
 
   return (
     <div className="mt-14 mb-12">
@@ -28,7 +30,7 @@ function Men_Jeans() {
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-5">
             {/* card section */}
-            {ProductsData.map((data) => (
+            {ProductData.map((data) => (
               <div
                 data-aos="fade-up"
                 
