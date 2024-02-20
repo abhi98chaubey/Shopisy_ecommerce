@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import Logo from "../../assets/logo.png";
 import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown, FaBars } from "react-icons/fa";
 import DarkMode from "./DarkMode";
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const Menu = [
   {
@@ -59,6 +59,7 @@ const Navbar = () => {
   const cart = useSelector((state) => state.cart);
   const Navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const getTotalQuantity = () => {
     let total = 0;
@@ -66,6 +67,10 @@ const Navbar = () => {
       total += item.quantity;
     });
     return total;
+  };
+
+  const handleSearch = () => {
+    Navigate(`/SearchPage?search=${searchTerm}`);
   };
 
   return (
@@ -88,10 +93,12 @@ const Navbar = () => {
             <div className="relative group hidden sm:block">
               <input
                 type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="search"
                 className="w-[200px] sm:w-[200px] group-hover:w-[300px] transition-all duration-300 rounded-full border border-gray-300 px-2 py-1 focus:outline-none focus:border-1 focus:border-primary dark:border-gray-500 dark:bg-gray-800  "
               />
-              <IoMdSearch className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3" />
+              <IoMdSearch onClick={handleSearch} className="text-gray-500 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3" />
             </div>
 
             {/* order button */}

@@ -1,8 +1,7 @@
-import React from 'react'
 
 import {ProductsData} from '../AllProductsData'
 import { FaStar } from "react-icons/fa6";
- import { useDispatch, useSelector } from 'react-redux';
+ import { useDispatch } from 'react-redux';
 
 
 import { addToCart} from '../Store/Slices/cartSlice'
@@ -24,7 +23,7 @@ import { useNavigate } from "react-router-dom";
     <div className="mt-14 mb-12">
       <div className="container">
         {/* Header section */}
-        <div className="text-center mb-10 max-w-[600px] mx-auto">
+        {/* <div className="text-center mb-10 max-w-[600px] mx-auto">
           <p data-aos="fade-up" className="text-sm text-primary">
             Top Selling Shoes for you
           </p>
@@ -34,7 +33,7 @@ import { useNavigate } from "react-router-dom";
           <p data-aos="fade-up" className="text-xs text-gray-400">
           Discover the Best! Shop Top Selling Shoes Tailored Just for You.
           </p>
-        </div>
+        </div> */}
         {/* Body section */}
         <div>
 
@@ -44,7 +43,7 @@ import { useNavigate } from "react-router-dom";
               <div
                 data-aos="fade-up"
                 data-aos-delay={data.aosDelay}
-                key={data.id}
+                key={data.product_id}
                 className="space-y-3"
               >
               <button onClick={() => Navigate(`product/${data.product_id}`)}>

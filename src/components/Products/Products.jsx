@@ -1,6 +1,6 @@
 
 import { FaStar } from "react-icons/fa6";
- import { useDispatch, useSelector } from 'react-redux';
+ import { useDispatch } from 'react-redux';
 // import { addItem } from '../../Store/Slices/cartSlice';
 import { ProductsData } from '../../ProductsData';
 import { addToCart} from '../../Store/Slices/cartSlice'
@@ -47,13 +47,13 @@ const Products = () => {
                 key={data.id}
                 className="space-y-3"
               >
-              <button onClick={() => Navigate(`product/${data.id}`)}>
+              {/* <button onClick={() => Navigate(`product/${data.id}`)}> */}
                 <img
                   src={data.img}
                   alt=""
                   className="h-[220px] w-[150px] object-cover rounded-md"
                   />
-                  </button>
+                  {/* </button> */}
                 <div>
                   <h3 className="font-semibold">{data.title}</h3>
                   <p className="text-sm text-gray-600">{data.color}</p>

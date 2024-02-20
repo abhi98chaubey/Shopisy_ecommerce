@@ -1,12 +1,7 @@
-import React from 'react'
-
 import {ProductsData} from '../ShoesData'
 import { FaStar } from "react-icons/fa6";
- import { useDispatch } from 'react-redux';
-
-
+import { useDispatch } from 'react-redux';
 import { addToCart} from '../Store/Slices/cartSlice'
-
 import { useNavigate } from "react-router-dom";
 
 function Manswear() {
@@ -42,7 +37,7 @@ function Manswear() {
               <div
                 data-aos="fade-up"
                 data-aos-delay={data.aosDelay}
-                key={data.id}
+                key={data.product_id}
                 className="space-y-3"
               >
               <button onClick={() => Navigate(`product/${data.product_id}`)}>

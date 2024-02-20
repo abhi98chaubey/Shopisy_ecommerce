@@ -6,11 +6,7 @@ import "aos/dist/aos.css";
 
 import Footer from "./components/Footer/Footer";
 import Popup from "./components/Popup/Popup";
-import { Route, Routes, useParams, useLocation } from "react-router-dom";
-import Manswear from "./pages/Manswear"
-import Girlswear from "./pages/Girlswear"
-import Kids from "./pages/Kids"
-import TopRated from "./pages/TopRated"
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Carts from "./pages/Carts";
 import Productdetails from "./components/Productdetails/Productdetails";
@@ -23,6 +19,7 @@ import  Men_Shirts  from "./pages/Men_Shirts";
 import  Men_Tshirts  from "./pages/Men_Tshirts";
 import  Mens_Jeans  from "./pages/Men_Jeans";
 import  Mens_Shoes  from "./pages/Men_Shoes";
+import SearchPage from "./pages/SearchPage";
 
 const App = () => {
   const location = useLocation();
@@ -54,6 +51,9 @@ const App = () => {
         <Route path={`/${pathname}/product/:product_id`} element={<Productdetails/>}/>
 
         <Route path="/Men_sirtData" element={<Men_Shirts/>} />
+      
+        <Route path="/SearchPage/:search" element={<SearchPage/>} /> 
+
         <Route path="/Men_Tshirt" element={<Men_Tshirts/>} />
         <Route path="/Men_ShoesData" element={<Mens_Shoes/>} />
         <Route path="/Men_JeansData" element={<Mens_Jeans/>} />
