@@ -1,4 +1,4 @@
-import React from "react";
+
 import Image1 from "../../assets/hero/women.png";
 import Image2 from "../../assets/hero/shopping.png";
 import Image3 from "../../assets/hero/sale.png";
@@ -63,6 +63,7 @@ const Hero = () => {
                     data-aos="zoom-out"
                     data-aos-duration="500"
                     data-aos-once="true"
+                    
                     className="text-5xl sm:text-6xl lg:text-7xl font-bold"
                   >
                     {data.title}
