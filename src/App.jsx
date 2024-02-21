@@ -1,25 +1,38 @@
-import React from "react";
-import Navbar from "./components/Navbar/Navbar";
+import React, { Suspense } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { Productdetails, Home, Carts, Women_Jeans, Women_Shoes, Women_Shirts, Women_Tshirt, Men_Shirts, Men_Tshirts, Mens_Jeans, Mens_Shoes, SearchPage, Footer, Popup, Navbar } from './index';
 
-import Footer from "./components/Footer/Footer";
-import Popup from "./components/Popup/Popup";
-import { Route, Routes, useLocation } from "react-router-dom";
-import Home from "./pages/Home";
-import Carts from "./pages/Carts";
-import Productdetails from "./components/Productdetails/Productdetails";
+const ErrorBoundary = ({ children }) => {
+  const [hasError, setHasError] = React.useState(false);
 
-import Women_Jeans  from "./pages/Women_Jeans";
-import  Women_Shoes  from "./pages/Women_Shoes";
-import  Women_Shirts  from "./pages/Women_Shirts";
-import  Women_Tshirt  from "./pages/Women_Tshirt";
-import  Men_Shirts  from "./pages/Men_Shirts";
-import  Men_Tshirts  from "./pages/Men_Tshirts";
-import  Mens_Jeans  from "./pages/Men_Jeans";
-import  Mens_Shoes  from "./pages/Men_Shoes";
-import SearchPage from "./pages/SearchPage";
+  React.useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 800,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
+    AOS.refresh();
+  }, []);
+
+  const handleOnError = (error, errorInfo) => {
+    console.error('Error caught by error boundary:', error, errorInfo);
+    setHasError(true);
+  };
+
+  if (hasError) {
+    return <h1>Something went wrong.</h1>;
+  }
+
+  return (
+    <Suspense fallback={<div>Loading...</div>} onError={handleOnError}>
+      {children}
+    </Suspense>
+  );
+};
 
 const App = () => {
   const location = useLocation();
@@ -30,46 +43,34 @@ const App = () => {
   const handleOrderPopup = () => {
     setOrderPopup(!orderPopup);
   };
-  React.useEffect(() => {
-    AOS.init({
-      offset: 100,
-      duration: 800,
-      easing: "ease-in-sine",
-      delay: 100,
-    });
-    AOS.refresh();
-  }, []);
 
   return (
-    <>
-    
     <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
       <Navbar handleOrderPopup={handleOrderPopup} />
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/carts" element={<Carts/>}/>
-        <Route path={`/${pathname}/product/:product_id`} element={<Productdetails/>}/>
-
-        <Route path="/Men_sirtData" element={<Men_Shirts/>} />
-      
-        <Route path="/SearchPage/:search" element={<SearchPage/>} /> 
-
-        <Route path="/Men_Tshirt" element={<Men_Tshirts/>} />
-        <Route path="/Men_ShoesData" element={<Mens_Shoes/>} />
-        <Route path="/Men_JeansData" element={<Mens_Jeans/>} />
-        <Route path="/Women_JeansData" element={<Women_Jeans/>} />
-        <Route path="/Women_shirtData" element={<Women_Shirts/>} />
-        <Route path="/Women_shoesData" element={<Women_Shoes/>} />
-        <Route path="/Women_tshirtData" element={<Women_Tshirt/>} />
-
-        
-    </Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/carts" element={<Carts />} />
+        <Route path={`/${pathname}/product/:product_id`} element={<Productdetails />} />
+        <Route path="/Men_sirtData" element={<Men_Shirts />} />
+        <Route path="/SearchPage/:search?" element={<SearchPage />} />
+        <Route path="/Men_Tshirt" element={<Men_Tshirts />} />
+        <Route path="/Men_ShoesData" element={<Mens_Shoes />} />
+        <Route path="/Men_JeansData" element={<Mens_Jeans />} />
+        <Route path="/Women_JeansData" element={<Women_Jeans />} />
+        <Route path="/Women_shirtData" element={<Women_Shirts />} />
+        <Route path="/Women_shoesData" element={<Women_Shoes />} />
+        <Route path="/Women_tshirtData" element={<Women_Tshirt />} />
+      </Routes>
       <Footer />
       <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
     </div>
-   
-    </>
   );
 };
 
-export default App;
+export default function AppWithErrorBoundary() {
+  return (
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
+  );
+}

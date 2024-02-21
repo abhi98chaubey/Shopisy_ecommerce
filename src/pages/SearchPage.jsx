@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaStar } from "react-icons/fa6";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../Store/Slices/cartSlice';
-import {  useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function SearchPage() {
- 
   const dispatch = useDispatch();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
