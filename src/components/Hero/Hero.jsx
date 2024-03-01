@@ -9,7 +9,7 @@ const ImageList = [
   {
     id: 1,
     img: Image1,
-    link:"/Men_Tshirts",
+    link:"/Men_Tshirt",
     title: "Upto 50% off on all Men's Wear",
     description:
       "Discover Unbeatable Savings! Enjoy Up to 50% Off on a Stylish Collection of Men's Wear.",
@@ -17,7 +17,7 @@ const ImageList = [
   {
     id: 2,
     img: Image2,
-    link:"/Women_Jeans",
+    link:"/Women_JeansData",
     title: "30% off on all Women's Wear",
     description:
       "Unleash Your Style with 30% Off! Explore an Exclusive Range of Women's Fashion at Irresistible Prices.",
@@ -25,7 +25,7 @@ const ImageList = [
   {
     id: 3,
     img: Image3,
-    link:"/Women_Tshirts",
+    link:"/Women_tshirtData",
     title: "70% off on all Products Sale",
     description:
       "Unbelievable Deals Await! Save Big with a Spectacular 70% Off on Every Product – Limited Time Offer!",
