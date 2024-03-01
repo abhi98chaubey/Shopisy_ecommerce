@@ -4,12 +4,12 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../Store/Slices/cartSlice';
 import { useNavigate } from "react-router-dom";
 
-function CategoryProduct(props) {
-  const { ProductData } = props;
+function CategoryProduct({ ProductData }) {
+ // const { ProductData } = props;
   const dispatch = useDispatch();
   const Navigate = useNavigate();
 
-  console.log(ProductData)
+  //console.log(ProductData)
 
   // Check if ProductData is an array before using map
   if (!Array.isArray(ProductData)) {
